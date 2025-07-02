@@ -2,23 +2,27 @@ import { useState } from "react";
 
 
 export default function SimpleForm(){
-    const namechng[] useState("");
-    const submitFun= (event)=>{
+    const [msg,setMsg] =useState("");
+    const HandleFun= (event)=>{
         event.preventDefault();
-        console.log(event.target.name.value);
-        console.log(event.target.email.value);
+        const namevalue=event.target.name.value;
+        const emailvalue=event.target.email.value;
+
+        console.log(namevalue);
+        console.log(emailvalue);
+        setMsg(namevalue);
 
     }
 
     return (
         <>
         <h1>Form</h1>
-        <form onSubmit={submitFun}>
+        <form onSubmit={HandleFun}>
             <input type="text" name="name" />
-            <input type="email" email="email"/>
+            <input type="email" name="email"/>
             <button type="submit">Submit</button>
         </form>
-        <p>name entered : {}</p>
+        <p>name entered : {msg}</p>
 
         </>
     );
