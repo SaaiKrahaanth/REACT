@@ -1,5 +1,5 @@
 
-
+import './TaskManager.css';
 import { useState } from "react";
 
 export default function TaskForm({addTask}){
@@ -48,6 +48,7 @@ export default function TaskForm({addTask}){
             placeholder="Enter the task.."
             className="add-task-input"
             onChange={handleText}
+            value={value}
             />
             
              {/*step 4 put the type as submit */}

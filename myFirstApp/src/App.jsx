@@ -8,6 +8,8 @@ import EventHandlingExample from "./CORE_CONCEPTS/06-Event-Handling/Event-Handli
 import SimpleForm from "./CORE_CONCEPTS/06-Event-Handling/SimpleForm"
 import ListExample from "./CORE_CONCEPTS/07-List and mapFunction/ListExample"
 import TaskManager from "./CORE_CONCEPTS/08-Task Manager/TaskManager"
+import UseStateExample from "./HOOKS/01-UseStateExample"
+import UseReducerExample from "./HOOKS/02-UseReducerExample"
 
 
 function App() {
@@ -21,7 +23,9 @@ function App() {
 // return <EventHandlingExample/>
 // return <SimpleForm/>
 // return <ListExample/>
-return <TaskManager/>
+// return <TaskManager/>
+// return <UseStateExample/>
+return <UseReducerExample/>
   
 }
 

@@ -13,9 +13,19 @@ export default function TaskManager(){
         /* STEP 14 to append tasks STATE to avoid replace whole State LIST
           Spread operator used <here>*/
           setTask([...tasks,newState]);
+    }
 
+    const  toggleTask = (id)=>{
+        setTask(tasks.map((task)=>{
+            return task.id == id ?{ ... task,completed:!task.completed}:task
+        }))
+    }
 
-
+    const deleteTask = (id)=>{
+        const fileredTasks =tasks.filter((task)=>{
+            return task['id'] !== id
+        });
+        setTask(fileredTasks)
     }
 
     return(//step 1 create a basic struct & component
@@ -26,7 +36,7 @@ export default function TaskManager(){
         {/* step 15 PROPS USED HERE share add task funtion to TaskForm.jsx 
         value from form --> come in this function added to the STATE list of Taskmanager.jsx
         */} 
-
+        <TaskList tasks={tasks} toggleTask={toggleTask} deleteTask={deleteTask}/>{/*step 16 send state as props*/}
         <p>Tasks {tasks.length}</p>
         
         </>
